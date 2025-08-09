@@ -121,22 +121,22 @@ endif()
 
 # Include headers and libs
 include_directories(
-  "${CMAKE_SOURCE_DIR}"
-  "${CMAKE_SOURCE_DIR}/src"
-  "${CMAKE_SOURCE_DIR}/build"
-  "${CMAKE_SOURCE_DIR}/build/deps/include"
+  "${CMAKE_CURRENT_SOURCE_DIR}"
+  "${CMAKE_CURRENT_SOURCE_DIR}/src"
+  "${CMAKE_CURRENT_SOURCE_DIR}/build"
+  "${CMAKE_CURRENT_SOURCE_DIR}/build/deps/include"
 )
 link_directories(
-  "${CMAKE_SOURCE_DIR}"
-  "${CMAKE_SOURCE_DIR}/src"
-  "${CMAKE_SOURCE_DIR}/build"
-  "${CMAKE_SOURCE_DIR}/build/deps/lib"
+  "${CMAKE_CURRENT_SOURCE_DIR}"
+  "${CMAKE_CURRENT_SOURCE_DIR}/src"
+  "${CMAKE_CURRENT_SOURCE_DIR}/build"
+  "${CMAKE_CURRENT_SOURCE_DIR}/build/deps/lib"
 )
 
 # Set the project version as a macro in a header file
 configure_file(
-  "${CMAKE_SOURCE_DIR}/include/web3cpp/version.h.in"
-  "${CMAKE_SOURCE_DIR}/include/web3cpp/version.h" @ONLY
+  "${CMAKE_CURRENT_SOURCE_DIR}/include/web3cpp/version.h.in"
+  "${CMAKE_CURRENT_SOURCE_DIR}/include/web3cpp/version.h" @ONLY
 )
 
 # Organize sources and headers
