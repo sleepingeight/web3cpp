@@ -50,8 +50,8 @@ FetchContent_MakeAvailable(json)
 
 # Build catch2 to a library.
 add_library(catch2
-  ${CMAKE_SOURCE_DIR}/src/libs/catch2/catch_amalgamated.hpp
-  ${CMAKE_SOURCE_DIR}/src/libs/catch2/catch_amalgamated.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/libs/catch2/catch_amalgamated.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/libs/catch2/catch_amalgamated.cpp
 )
 
 # Add external modules
@@ -171,7 +171,7 @@ else()
 endif()
 
 # Configure directories to search for header files
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 # For linking openssl on MacOS
 target_include_directories(${PROJECT_NAME} PRIVATE ${OPENSSL_INCLUDE_DIR})
 target_include_directories(${PROJECT_NAME} PRIVATE ${Boost_INCLUDE_DIRS})
@@ -202,7 +202,7 @@ if(BUILD_TESTS)
   file(GLOB TESTS_HEADERS "tests/*.h")
   file(GLOB TESTS_SOURCES "tests/*.cpp")
   add_executable(${PROJECT_NAME}-tests ${TESTS_HEADERS} ${TESTS_SOURCES})
-  target_include_directories(${PROJECT_NAME}-tests PRIVATE ${CMAKE_SOURCE_DIR}/include)
+  target_include_directories(${PROJECT_NAME}-tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
   target_include_directories(${PROJECT_NAME}-tests PRIVATE ${OPENSSL_INCLUDE_DIR})
   # For certify to work on MacOS
   if(APPLE)
